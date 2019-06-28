@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace PaymentPlatform.Models
+namespace WebAPI.Models
 {
     public class PaymentDetailsContext:DbContext
     {
@@ -12,5 +8,7 @@ namespace PaymentPlatform.Models
         {
                 
         }
+
+        public DbSet<PaymentDetails> PaymentDetails { get; set; }
     }
 }

@@ -14,10 +14,19 @@ export class PaymentDetailsService {
   constructor(private http: HttpClient) { }
 
   // Post Data /API/PaymentDetails
-  CreatePaymentDetails(formData: PaymentDetails) {
-    return this.http.post(this.rootUrl + '/PaymentDetails', formData);
+  CreatePaymentDetails() {
+    return this.http.post(this.rootUrl + '/PaymentDetails', this.formData);
   }
 
+  // PUT Data /API/PaymentDetails/Id
+  EditPaymentDetails() {
+    return this.http.put(this.rootUrl + '/PaymentDetails/' + this.formData.Id, this.formData);
+  }
+
+  // DELETE Data /API/PaymentDetails/Id
+  DeletePaymentDetails(id) {
+    return this.http.delete(this.rootUrl + '/PaymentDetails/' + id);
+  }
   // Get Data /API/PaymentDetails
   GetPaymentDetails() {
     this.http.get(this.rootUrl + '/PaymentDetails')

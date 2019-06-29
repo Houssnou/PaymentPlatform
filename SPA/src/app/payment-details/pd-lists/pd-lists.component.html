@@ -1,3 +1,11 @@
-<p>
-  pd-lists works!
-</p>
+<table class="table table-hover">
+  <tr *ngFor="let pd of service.list">
+    <td (click)="EditPaymentDetails(pd)">{{pd.CardOwner}}</td>
+    <td (click)="EditPaymentDetails(pd)">{{pd.CardNumber}}</td>
+    <td (click)="EditPaymentDetails(pd)">{{pd.CardExpirationDate}}</td>
+    <td>
+      <i class="far fa-trash-alt fa-lg text-danger"(click)="onDelete(pd.Id)"></i>
+    </td>
+
+  </tr>
+</table>
